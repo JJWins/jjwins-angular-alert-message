@@ -1,3 +1,10 @@
+## Description
+This library can be used to display flash messages or alert messages in your html template.
+
+Alternative to angular-2-flash-messages, this is the closest alternative to angular-2-flash-messages npm library. The usage of this library almost ressembles the usage of the angular-2-flash-messages library.
+
+---
+
 ## Requirements
 - NPM (Node Package Manager)
 
