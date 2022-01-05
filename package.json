@@ -10,7 +10,9 @@
     "angular alert message",
     "angular alert", "alert message",
     "angular message", "npm", "angular library",
-    "angular toaster", "toaster"
+    "angular toaster", "toaster",
+    "angular-2-flash-messages", "flash messages",
+    "angular flash messages", "alternative to angular-2-flash-messages"
   ],
   "author": "John Winsley <johnjvgm@gmail.com> (https://github.com/JJWins)",
   "license": "MIT",
