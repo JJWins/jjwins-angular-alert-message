@@ -4,16 +4,16 @@
 ---
 
 ## Installation
-- `npm install jjwins-alert-messages`
+- `npm install jjwins-angular-alert-messages`
 
 ---
 
 ## Importing
 
-Import **_AlertMessagesModule_** from **_jjwins-alert-messages_** in your module.ts file and add **_AlertMessagesModule_** to the imports array of module.ts file
+Import **AlertMessagesModule** from **jjwins-angular-alert-messages** in your module.ts file and add **AlertMessagesModule** to the imports array of module.ts file
 
 ```
-import { AlertMessagesModule } from 'jjwins-alert-messages';
+import { AlertMessagesModule } from 'jjwins-angular-alert-messages';
  
 
 
@@ -29,13 +29,13 @@ AlertMessagesModule,
 ## Usage
 
 To use the alert message library in your application,
-import **_AlertMessagesService_** from **_'jjwins-alert-messages'_** in your component.ts file
-and call **_show()_** from the **_AlertMessagesService_** and add the selector tag `<jjwins-alert-messages></jjwins-alert-messages>` to the html template file 
+import **AlertMessagesService** from **'jjwins-angular-alert-messages'** in your component.ts file
+and call **show()** from the **AlertMessagesService** and add the selector tag `<jjwins-alert-messages></jjwins-alert-messages>` to the html template file 
 
 > app.component.ts
 
 ```
-    import { AlertMessagesService } from 'jjwins-alert-messages'
+    import { AlertMessagesService } from 'jjwins-angular-alert-messages'
 
 
     export class AppComponent{
