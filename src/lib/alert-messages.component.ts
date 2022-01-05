@@ -5,8 +5,8 @@ import { AlertMessagesService } from './alert-messages.service';
   selector: 'jjwins-alert-messages',
   template: `
     <div class="grayOutDiv" *ngIf="grayOut"></div>
-    <div class="alert message {{cssClass}}" [ngClass]="{'closeBtn':showClosebtn}" *ngIf="showMessage">{{ alertMessage }}
-      <button class="btn-close position-absolute end-0 pe-4" *ngIf="showClosebtn" (click)="closeAlert()"></button>
+    <div class="message {{cssClass}}" [ngClass]="{'messsageRightPadding':showClosebtn}" *ngIf="showMessage">{{ alertMessage }}
+      <button class="close-btn" *ngIf="showClosebtn" (click)="closeAlert()">&#10006;</button>
     </div>
   `,
   styles: [
@@ -28,9 +28,16 @@ import { AlertMessagesService } from './alert-messages.service';
         z-index: 10000;
         position: relative;
         display:inline-block;
+        padding: .5rem;
     }
-    .closeBtn{
-      padding-right: 2.5rem;
+    .messsageRightPadding{
+      padding-right: .5rem;
+    }
+    .close-btn{
+      border:none;
+      border-radius:5px;
+      background:none;
+      cursor: pointer;
     }
     `
   ]

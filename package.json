@@ -14,9 +14,9 @@
   ],
   "author": "John Winsley <johnjvgm@gmail.com> (https://github.com/JJWins)",
   "license": "MIT",
-  "homepage": "https://github.com/JJWins/jjwins-angular-alert-message",
+  "homepage": "https://github.com/JJWins/jjwins-angular-alert-messages",
   "bugs": {
-    "url": "https://github.com/JJWins/jjwins-angular-alert-message/issues"
+    "url": "https://github.com/JJWins/jjwins-angular-alert-messages/issues"
   },
   "dependencies": {
     "tslib": "^2.3.0"
