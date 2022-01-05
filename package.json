@@ -1,0 +1,24 @@
+{
+  "name": "jjwins-alert-messages",
+  "version": "1.0.0",
+  "description": "This is an angular library for displaying alert messages in the html template using a function call in the component file",
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
+  },
+  "keywords": [
+    "angular alert message",
+    "angular alert", "alert message",
+    "angular message", "npm", "angular library",
+    "angular toaster", "toaster"
+  ],
+  "author": "John Winsley <johnjvgm@gmail.com> (https://github.com/JJWins)",
+  "license": "MIT",
+  "homepage": "https://github.com/JJWins/jjwins-angular-alert-message",
+  "bugs": {
+    "url": "https://github.com/JJWins/jjwins-angular-alert-message/issues"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
