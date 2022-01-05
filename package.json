@@ -1,5 +1,5 @@
 {
-  "name": "jjwins-alert-messages",
+  "name": "jjwins-angular-alert-messages",
   "version": "1.0.0",
   "description": "This is an angular library for displaying alert messages in the html template using a function call in the component file",
   "peerDependencies": {
