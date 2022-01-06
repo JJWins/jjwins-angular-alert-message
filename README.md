@@ -71,7 +71,7 @@ and call **show()** from the **AlertMessagesService** and add the selector tag `
         
         constructor(private _alertMessageService: AlertMessagesService) { }
 
-        this._alertMessageService.show('your message', 2000, 'alert-warning', true)
+        this._alertMessageService.show('your message', 2000, 'alerts-warning', true)
 
     }
 ```
