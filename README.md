@@ -79,17 +79,25 @@ and call **show()** from the **AlertMessagesService** and add the selector tag `
 
 - Example:
 
-    `this._alertMessageService.show('Warning');`
+    ```
+        this._alertMessageService.show('Warning');
+    ```
     - above line of code will show an alert with the message 'warning'
 
-    `this._alertMessageService.show('Warning', 2000);`
+    ```
+        this._alertMessageService.show('Warning', 2000);
+    ```
     - this line of code will show the alert message 'warning' for 2000 millisecons ie, 2 seconds
 
-    `this._alertMessageService.show('Warning', 2000, 'alerts-message');`
+    ```
+        this._alertMessageService.show('Warning', 2000, 'alerts-message');
+    ```
     - this line of code will show the alert message 'warning' for 2 seconds with a css class of alerts-message which is in-built
     - you can use 4 in-built css classes _"alerts-message, alerts-error, alerts-warning, alerts-success"_
     - you can also use your own css class that is defined in your style sheets.
 
-    `this._alertMessageService.show('Warning', 2000, 'alerts-message', true);`
+    ```
+        this._alertMessageService.show('Warning', 2000, 'alerts-message', true);
+    ```
     - this line of code will show the alert message 'warning' for 2 seconds with a css class of alerts-message which is in-built and adds a grayed out background 
 

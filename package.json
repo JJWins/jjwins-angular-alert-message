@@ -1,6 +1,6 @@
 {
   "name": "jjwins-angular-alert-messages",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is an angular library for displaying alert messages in the html template using a function call in the component file",
   "peerDependencies": {
     "@angular/common": "^12.2.0",
