@@ -7,5 +7,5 @@ export class AlertMessagesService {
 
   constructor() { }
 
-  show(message:string, timeOut?:number, cssClass?:string, grayOut?:boolean) { }
+  show(message:string, options?:any) { }
 }
