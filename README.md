@@ -41,6 +41,7 @@ and call **show()** from the **AlertMessagesService** and add the selector tag `
 
 > app.component.ts
 
+
 ```
     import { AlertMessagesService } from 'jjwins-angular-alert-messages'
 
@@ -49,47 +50,43 @@ and call **show()** from the **AlertMessagesService** and add the selector tag `
         
         constructor(private _alertMessageService: AlertMessagesService) { }
 
-        this._alertMessageService.show()
+        this._alertMessageService.show('your text here', {})
 
     }
 ```
 
 >app.component.html
+
 `
     <jjwins-alert-messages></jjwins-alert-messages>
 `
 
-**show()** **_function takes 4 arguments_**
+### **Example**
 
-1. Alert message - your message to show in the alert, this is a required argument
-2. Timeout - Period of time after which the alert should disappear
-3. Css Class - Provide the name of the in-built classes **_"alerts-message, alerts-error, alerts-warning, alerts-success"_** or provide the name of your css class which is defined in the style sheet as a string value
-4. Gray out - set this value to true to gray out the background
+#### For your customization
+
+**Pass an object with the optional key:value pairs**
+
+- Add in-built css classes such as **_"alerts-message, alerts-error, alerts-warning, alerts-success"_** or your own css class defined in the style sheet
+- Add timeOut value in milliseconds for your alert message to disappear after specified time, if not specified a close button will appear
+- Add grayOut value as true to display a transparent gray background behind the alert message
 
 ```
     export class AppComponent{
         
         constructor(private _alertMessageService: AlertMessagesService) { }
 
-        this._alertMessageService.show('your message', 2000, 'alerts-warning', true)
+        // First parameter is the message you want to add, it is a required value
+        // Second parameter is optional and it takes an object
 
+        // function with arguments message and the optional cssClass in an object
+        this._alertMessageService.show('your message', {cssClass:'alerts-message'})
+
+        // function with arguments message, cssClass and timeOut
+        this._alertMessageService.show('your message', {cssClass:'alerts-message', timeOut: 2000})
+
+        // function with arguments message, cssClass, timeOut and grayOut
+        this._alertMessageService.show('your message', {cssClass:'alerts-message', timeOut: 2000, grayOut:true}) 
     }
 ```
-- Note: If you do not want to use any of the optional values, just add a zero, empty string, false in place of the of the optional values
-
-- Example:
-
-    ```this._alertMessageService.show('Warning');```
-    - above line of code will show an alert with the message 'warning'
-
-    ```this._alertMessageService.show('Warning', 2000);```
-    - this line of code will show the alert message 'warning' for 2000 millisecons ie, 2 seconds
-
-    ```this._alertMessageService.show('Warning', 2000, 'alerts-message');```
-    - this line of code will show the alert message 'warning' for 2 seconds with a css class of alerts-message which is in-built
-    - you can use 4 in-built css classes _"alerts-message, alerts-error, alerts-warning, alerts-success"_
-    - you can also use your own css class that is defined in your style sheets.
-
-    `this._alertMessageService.show('Warning', 2000, 'alerts-message', true);`
-    - this line of code will show the alert message 'warning' for 2 seconds with a css class of alerts-message which is in-built and adds a grayed out background 
 
