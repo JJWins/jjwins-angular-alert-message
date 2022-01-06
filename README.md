@@ -63,7 +63,7 @@ and call **show()** from the **AlertMessagesService** and add the selector tag `
 
 1. Alert message - your message to show in the alert, this is a required argument
 2. Timeout - Period of time after which the alert should disappear
-3. Css Class - Provide the name of your css class as a string value which is defined in the style sheet
+3. Css Class - Provide the name of the in-built classes **_"alerts-message, alerts-error, alerts-warning, alerts-success"_** or provide the name of your css class which is defined in the style sheet as a string value
 4. Gray out - set this value to true to gray out the background
 
 ```
