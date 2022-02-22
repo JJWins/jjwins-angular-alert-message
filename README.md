@@ -1,92 +1,99 @@
-## Description
-This library can be used to display flash messages or alert messages in your html template.
+## JJWINS-PAGINATION
 
-Alternative to angular-2-flash-messages, this is the closest alternative to angular-2-flash-messages npm library. The usage of this library almost ressembles the usage of the angular-2-flash-messages library.
-
----
-
-## Requirements
-- NPM (Node Package Manager)
+**Pagination** library for use with angular projects.
 
 ---
 
-## Installation
-- `npm install jjwins-angular-alert-messages`
+#### Requirements
+
+NPM - Node Package Manager
 
 ---
 
-## Importing
+#### Demo
 
-Import **AlertMessagesModule** from **jjwins-angular-alert-messages** in your module.ts file and add **AlertMessagesModule** to the imports array of module.ts file
+Click [here](https://angular-ivy-biiccx.stackblitz.io) to see the demo application
+
+Checkout the code [here](https://stackblitz.com/edit/angular-ivy-biiccx?)
+
+---
+
+#### Installation
+
+`npm install jjwins-pagination`
+
+---
+
+#### Importing
+
+Import **PaginationModule** from **jjwins-pagination** in your module.ts file and add **PaginationModule** to the import array of module.ts file
 
 ```
-import { AlertMessagesModule } from 'jjwins-angular-alert-messages';
- 
+import { PaginationModule } from 'jjwins-pagination'
 
 
-imports: [ 
-... 
-AlertMessagesModule,
-...
-],
+imports: [
+  ...
+  PaginationModule
+  ...
+]
 ```
 
 ---
 
-## Usage
+#### Usage
 
-To use the alert message library in your application,
-import **AlertMessagesService** from **'jjwins-angular-alert-messages'** in your component.ts file
-and call **show()** from the **AlertMessagesService** and add the selector tag `<jjwins-alert-messages></jjwins-alert-messages>` to the html template file 
+To render the pagination in your application add _<jjwins-pagination></jjwins-pagination>_ pto your component.html file
 
-> app.component.ts
+_<jjwins-pagination></jjwins-pagination>_ will take 2 input data **_[data] & [displayData]_**
 
+> file.component.html
+> `<jjwins-pagination [data]="data" [displayData]="displayData"></jjwins-pagination> `
 
-```
-    import { AlertMessagesService } from 'jjwins-angular-alert-messages'
+In your component.ts file add properties **_data_** and **_displayData_**
+**Important!**
 
+- **_data_** takes an array as value
+- **_displayData_** takes an object with key:value **_{totalDataCount: number, itemsPerPage: number}_**
+  - _totalDataCount_ refers to the total number of data present in the array
+  - _itemsPerPage_ refers to the number of data to be displayed on one page
+    > Note: Provide these values in the component.ts file
 
-    export class AppComponent{
-        
-        constructor(private _alertMessageService: AlertMessagesService) { }
+##### IMPORTANT - To get the trimmed data according to the number of data per page
 
-        this._alertMessageService.show('your text here', {})
+Import **_PaginationService_** from **_jjwins-pagination_** and inject in the constructor.
+Then subscribe to the **_latestdata_** of the pagination service after a timeout of 300 millisecond to receive the latest data.
 
-    }
-```
+> Note: The timeout is required to avoid data changes after rendering the virtual DOM
 
->app.component.html
-
-`
-    <jjwins-alert-messages></jjwins-alert-messages>
-`
-
-### **Example**
-
-#### For your customization
-
-**Pass an object with the optional key:value pairs**
-
-- Add in-built css classes such as **_"alerts-message, alerts-error, alerts-warning, alerts-success"_** or your own css class defined in the style sheet
-- Add timeOut value in milliseconds for your alert message to disappear after specified time, if not specified a close button will appear
-- Add grayOut value as true to display a transparent gray background behind the alert message
+**- Then use the latest data received from the pagination service to render the table in the template**
 
 ```
-    export class AppComponent{
-        
-        constructor(private _alertMessageService: AlertMessagesService) { }
+import { PaginationService } from 'jjwins-pagination'
 
-        // First parameter is the message you want to add, it is a required value
-        // Second parameter is optional and it takes an object
+ ...
 
-        // function with arguments message and the optional cssClass in an object
-        this._alertMessageService.show('your message', {cssClass:'alerts-message'})
+ latestData: any;
 
-        // function with arguments message, cssClass and timeOut
-        this._alertMessageService.show('your message', {cssClass:'alerts-message', timeOut: 2000})
+ constructor( private _pagination: PaginationService) { }
 
-        // function with arguments message, cssClass, timeOut and grayOut
-        this._alertMessageService.show('your message', {cssClass:'alerts-message', timeOut: 2000, grayOut:true}) 
-    }
+ ngOnInit() {
+
+  setTimeOut(() => {
+   this._pagination.latestData.subscribe((data) => {
+     this.latestData = data;
+   })
+  }, 300)
+
+ }
+
+ ...
+
 ```
 
+##### Alignment options
+
+- To align the pagination use html _'align'_ attribute
+  > `<jjwins-pagination [data]="data" [displayData]="displayData" align="center"></jjwins-pagination> `
+  - By default the pagination is left aligned
+  - It can be center or right aligned with values _'center'_ or _'right'_ in the align attribute
